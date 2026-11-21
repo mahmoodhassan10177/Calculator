@@ -13,7 +13,6 @@ function updateDisplay() {
     output.textContent = current;
     historyDisplay.textContent = historyText;
 }
-
 // Number input
 function inputNumber(num) {
     if (waitingForNumber) {
