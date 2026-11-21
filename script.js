@@ -7,7 +7,6 @@ let previous = null;
 let operator = null;
 let waitingForNumber = false;
 let historyText = "";
-
 // Display update
 function updateDisplay() {
     output.textContent = current;
