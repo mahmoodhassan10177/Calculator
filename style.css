@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border box;
+}
+
+body{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #060913;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+/* Glowing Background Orbs */
+
+.orb{
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(85px);
+    z-index: 0;
+    pointer-events: none;
+}
+.orb-1{
+    width: 340px;
+    height: 340px;
+    background: rgba(56, 189, 248, 0.25);
+    top: 15%;
+    right: 28%;
+}
+/* Frosted Glass Calculator Shell */
+.calculator{
+    position: relative;
+    z-index: 1;
+    width: 330px;
+    padding: 24px;
+    border-radius: 28px;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.150);
+}
+
+/* Dual-Line Screen */
+.display{
+    background: rgba(2, 6, 23, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+}
+.history{
+    min-height: 20px;
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: ellipsis;
+    white-space: nowrap;
+}
+
+.output{
+    font-size: 34px;
+    font-weight: 600;
+    color: #f8fafc;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 4-column keypad */
+.keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.btn{
+    height: 56px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    background: rgba(30, 41, 59, 0.65);
+    color: #f1f5f9;
+    font-size: 19px;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.08s ease, background 0.15s ease, box- shadow 0.15s ease;
+}
+.btn:hover{
+    background: rgba(51, 65, 85, 0.8);
+}
+.btn:active, .btn.active{
+    transform: scale(0.92);
+    background: rgba(71, 85, 105, 0.9);
+}
+/* Function Keys */
+.btn.fn{
+    color: #38bdf8;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Operator Keys */
+.btn.op{
+    background: rgba(56, 189, 248, 0.12);
+    color: #38bdf8;
+    font-size: 22px;
+}
+.btn.op:hover{
+    background: rgba(56, 189, 248, 0.22);
+}
+/* Gradient Equals Key */
+.btn.eq{
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    color: #020617;
+    font-size: 24px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.35);
+}
+.btn.eq:hover{
+    filter: brightness(1.1);
+}
